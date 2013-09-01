@@ -11,4 +11,14 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+setopt extended_glob
 
+
+# Load custom shell functions
+if [[ -d "$HOME/.zsh" ]]; then
+	for f in ~/.zsh/*(.N); source "$f";
+fi;
+
+# Additional key bindings
+bindkey '^[[1;5D' backward-word # ctrl+left
+bindkey '^[[1;5C' forward-word  # ctrl+right
