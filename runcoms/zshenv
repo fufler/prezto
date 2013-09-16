@@ -19,7 +19,6 @@ fi
 
 export EDITOR='vim'
 export VISUAL='vim'
-export VIEWER='vim -R'
 export PAGER='less'
 
 #
@@ -76,3 +75,8 @@ if [[ ! -d "$TMPPREFIX" ]]; then
 fi
 
 export TERM=xterm-256color;
+
+export ISPH_LIBS="$HOME/git/zsph"
+export PATH="$HOME/git/zsph/bin:$PATH"
+
+export GIT_SSL_NO_VERIFY=1 
