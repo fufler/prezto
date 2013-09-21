@@ -78,5 +78,11 @@ export TERM=xterm-256color;
 
 export ISPH_LIBS="$HOME/git/zsph"
 export PATH="$HOME/git/zsph/bin:$PATH"
+export PATH="$HOME/.bin:$PATH"
 
-export GIT_SSL_NO_VERIFY=1 
+export GIT_SSL_NO_VERIFY=1
+
+export ALFRESCO_HOME=$HOME/alfresco/in-use
+export ALFRESCO_REPO_SERVICE=http://localhost:8080/alfresco/service/index
+export ALFRESCO_SHARE_SERVICE=http://localhost:8080/share/service/index
+export ALFRESCO_ADMIN_PASSWORD=admin
