@@ -16,7 +16,7 @@ setopt extended_glob
 
 # Load custom shell functions
 if [[ -d "$HOME/.zsh" ]]; then
-	for f in ~/.zsh/*(.N); source "$f";
+	for f in $HOME/.zsh/*.sh(N); source "$f";
 fi;
 
 # Additional key bindings
