@@ -88,3 +88,7 @@ export ALFRESCO_SHARE_SERVICE=http://localhost:8080/share/service/index
 export ALFRESCO_ADMIN_PASSWORD=admin
 
 export MAVEN_OPTS=-Xmx1024m
+
+export LESS=" -R"
+export LESSOPEN="| src-hilite-lesspipe.sh %s"
+
