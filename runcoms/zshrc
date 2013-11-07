@@ -24,6 +24,3 @@ bindkey '^[[1;5D' backward-word                       # ctrl+left
 bindkey '^[[1;5C' forward-word                        # ctrl+right
 bindkey '^R'      history-incremental-search-backward # ctrl+r
 bindkey '^[.'     insert-last-word                    # alt+.
-
-alias ipython='ipython --colors=lightbg'
-alias ipython2='ipython --colors=lightbg'
