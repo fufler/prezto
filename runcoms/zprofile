@@ -75,3 +75,4 @@ if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
 
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
