@@ -26,3 +26,11 @@ bindkey '^R'      history-incremental-search-backward # ctrl+r
 bindkey '^[.'     insert-last-word                    # alt+.
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+
+# favorite directories
+setopt auto_cd
+cdpath=($HOME/work/itd/nebvex/manageiq/vmdb)
+
+# enable the fuck
+eval $(thefuck --alias)
