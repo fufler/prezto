@@ -10,6 +10,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Enable Z
+source "$HOME/.dotz/z/z.sh"
+
 # Customize to your needs...
 setopt extended_glob
 
