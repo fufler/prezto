@@ -19,7 +19,7 @@ elif (( $+commands[pyenv] )); then
   eval "$(pyenv init -)"
 
 # Prepend PEP 370 per user site packages directory, which defaults to
-# ~/Library/Python on Mac OS X and ~/.local elsewhere, to PATH. The
+# ~/Library/Python on macOS and ~/.local elsewhere, to PATH. The
 # path can be overridden using PYTHONUSERBASE.
 else
   if [[ -n "$PYTHONUSERBASE" ]]; then
@@ -82,6 +82,7 @@ function _python-workon-cwd {
 # Load auto workon cwd hook
 if zstyle -t ':prezto:module:python:virtualenv' auto-switch 'yes'; then
   # Auto workon when changing directory
+  autoload -Uz add-zsh-hook
   add-zsh-hook chpwd _python-workon-cwd
 fi
 
