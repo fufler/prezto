@@ -16,6 +16,12 @@ source "$HOME/.dotz/z/z.sh"
 # Customize to your needs...
 setopt extended_glob
 
+# Enable fzf
+for f in completion key-bindings; do
+    file=/usr/share/fzf/$f.zsh
+    [[ -f $file ]] && source $file
+done
+
 
 # Load custom shell functions
 if [[ -d "$HOME/.zsh" ]]; then
