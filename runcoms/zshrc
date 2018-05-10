@@ -17,14 +17,21 @@ source "$HOME/.dotz/z/z.sh"
 setopt extended_glob
 
 # Enable fzf
-for fzf_file in completion key-bindings; do
-    for fzf_path in /usr/share/fzf /usr/share/fzf/shell; do
-        file=${fzf_path}/${fzf_file}.zsh
-        if [[ -f $file ]]; then
-            source $file
-            break
-        fi
-    done
+distro=$( grep -zohP '(?<=^NAME=).*' /etc/os-release | sed 's/[^a-zA-Z0-9]//g')
+case $distro in
+    "ArchLinux")
+        fzf_files=(/usr/share/fzf/completion.zsh /usr/share/fzf/key-bindings.zsh)
+        ;;
+    "Fedora")
+        fzf_files=(/usr/share/zsh/site-functions/fzf /usr/share/fzf/shell/key-bindings.zsh)
+        ;;
+    *)
+        echo kek
+        ;;
+esac
+
+for fzf_file in $fzf_files; do
+    [[ -f $fzf_file ]] && source $fzf_file
 done
 
 # Load custom shell functions
