@@ -49,7 +49,7 @@ function prompt_fufler_setup {
     'rprompt' ' $(coalesce "%b" "%p" "%c")%s%C%D'
 
   # Define prompts.
-  PROMPT='${SSH_TTY:+[%n@%m]}%F{cyan}${_prompt_fufler_pwd}%f${editor_info[keymap]}'" %(?.${success_color}.${failure_color})%<<%(!.${root_char}.${user_char})%b%f "
+  PROMPT='${SSH_TTY:+[%n@%m] }%F{cyan}${_prompt_fufler_pwd}%f${editor_info[keymap]}'" %(?.${success_color}.${failure_color})%<<%(!.${root_char}.${user_char})%b%f "
   RPROMPT='${git_info:+${(e)git_info[rprompt]}}'
 }
 
