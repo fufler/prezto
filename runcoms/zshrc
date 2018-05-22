@@ -34,10 +34,8 @@ for fzf_file in $fzf_files; do
     [[ -f $fzf_file ]] && source $fzf_file
 done
 
-# Load custom shell functions
-if [[ -d "$HOME/.zsh" ]]; then
-	for f in $HOME/.zsh/*.sh(N); source "$f";
-fi;
+# Load sk
+[[ -f "$HOME/.zsh/sk.zsh" ]] && source "$HOME/.zsh/sk.zsh"
 
 # Additional key bindings
 bindkey '^[[1;5D' backward-word                       # ctrl+left
