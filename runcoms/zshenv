@@ -10,12 +10,4 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-export LD_LIBRARY_PATH="$HOME/.local/lib/:$LD_LIBRARY_PATH"
-
-export MAVEN_OPTS=-Xmx1024m
-
-export LESS=" -R"
 export LESSOPEN="| src-hilite-lesspipe.sh %s"
-
-export VIRSH_DEFAULT_CONNECT_URI=qemu:///system
-export QT_GRAPHICSSYSTEM=native
