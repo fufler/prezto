@@ -40,7 +40,6 @@ done
 # Additional key bindings
 bindkey '^[[1;5D' backward-word                       # ctrl+left
 bindkey '^[[1;5C' forward-word                        # ctrl+right
-bindkey '^R'      history-incremental-search-backward # ctrl+r
 bindkey '^[.'     insert-last-word                    # alt+.
 
 
@@ -50,3 +49,20 @@ function dotz_update() {
     git pull && git submodule update --init --recursive
     cd -
 }
+
+# Integrate fzf with z
+
+unalias z
+z() {
+  if [[ -z "$*" ]]; then
+    cd "$(_z -l 2>&1 | fzf +s --tac | sed 's/^[0-9,.]* *//')"
+  else
+    _last_z_args="$@"
+    _z "$@"
+  fi
+}
+
+zz() {
+  cd "$(_z -l 2>&1 | sed 's/^[0-9,.]* *//' | fzf -q "$_last_z_args")"
+}
+
