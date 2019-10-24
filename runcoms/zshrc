@@ -26,7 +26,6 @@ case $distro in
         fzf_files=(/usr/share/zsh/site-functions/fzf /usr/share/fzf/shell/key-bindings.zsh)
         ;;
     *)
-        echo kek
         ;;
 esac
 
