@@ -46,7 +46,7 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'pacman' \
   'syntax-highlighting' \
-  'mvn'
+  'ssh'
 
 #
 # Autosuggestions
