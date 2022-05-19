@@ -31,6 +31,8 @@ zstyle ':prezto:*:*' color 'yes'
 # The order matters.
 #
 zstyle ':prezto:load' pmodule \
+  'autosuggestions' \
+  'alias-tips' \
   'archive' \
   'environment' \
   'terminal' \
@@ -50,6 +52,11 @@ zstyle ':prezto:load' pmodule \
   'pacman' \
   'syntax-highlighting' \
   'ssh'
+
+#
+# Alias tips
+#
+zstyle ":prezto:module:alias-tips" text "Useful alias: "
 
 #
 # Autosuggestions
