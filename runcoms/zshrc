@@ -73,6 +73,11 @@ zz() {
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+
 [[ ! -f ~/.zsh/p10k.zsh ]] || source ~/.zsh/p10k.zsh
 
 setopt HIST_IGNORE_SPACE
+
+if ps $PPID | grep -q mc; then
+    typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+fi
