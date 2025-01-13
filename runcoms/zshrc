@@ -77,7 +77,7 @@ zz() {
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 [[ ! -f ~/.zsh/p10k.zsh ]] || source ~/.zsh/p10k.zsh
 
-setopt HIST_IGNORE_SPACE
+setopt histignorespace
 
 if ps $PPID | grep -q mc; then
     typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
