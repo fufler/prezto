@@ -82,3 +82,5 @@ setopt histignorespace
 if ps $PPID | grep -q mc; then
     typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 fi
+
+export EDITOR=nvim
