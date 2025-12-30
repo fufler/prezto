@@ -16,20 +16,7 @@ source "$HOME/.dotz/z/z.sh"
 # Customize to your needs...
 setopt extended_glob
 
-# Enable fzf
-distro=$( grep -zohP '(?<=^NAME=).*' /etc/os-release | sed 's/[^a-zA-Z0-9]//g')
-case $distro in
-    "ArchLinux")
-        fzf_files=(/usr/share/fzf/completion.zsh /usr/share/fzf/key-bindings.zsh)
-        ;;
-    "Fedora")
-        fzf_files=(/usr/share/zsh/site-functions/fzf /usr/share/fzf/shell/key-bindings.zsh)
-        ;;
-    *)
-        ;;
-esac
-
-for fzf_file in $fzf_files; do
+for fzf_file in /usr/share/fzf/{completion.zsh,key-bindings.zsh}; do
     [[ -f $fzf_file ]] && source $fzf_file
 done
 
