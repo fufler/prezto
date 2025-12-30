@@ -45,8 +45,6 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'contrib-prompt' \
-  'prompt' \
   'python' \
   'git' \
   'archive' \
