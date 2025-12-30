@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 #
 # Executes commands at the start of an interactive session.
 #
@@ -72,15 +65,11 @@ zz() {
   cd "$(_z -l 2>&1 | sed 's/^[0-9,.]* *//' | fzf -q "$_last_z_args")"
 }
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-[[ ! -f ~/.zsh/p10k.zsh ]] || source ~/.zsh/p10k.zsh
 
 setopt histignorespace
 
-if ps $PPID | grep -q mc; then
-    typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+if ! ps $PPID | grep -q mc; then
+    eval "$(starship init zsh)"
 fi
 
 export EDITOR=nvim
