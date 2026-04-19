@@ -22,7 +22,7 @@ local G=$((16#${g_hex}))
 local B=$((16#${b_hex}))
 
 
-local lum=$(echo "scale=4; (0.2126 * $R + 0.7152 * $G + 0.0722 * $B) / 65535" | bc)
+local lum=$(( (0.2126 * R + 0.7152 * G + 0.0722 * B) / 65535 ))
 
 if (( lum < 0.5 )); then
   export MC_SKIN=dracula256
