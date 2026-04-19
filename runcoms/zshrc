@@ -56,7 +56,9 @@ zz() {
 setopt histignorespace
 
 if ! ps $PPID | grep -q mc; then
+  if command -v starship >/dev/null 2>&1; then
     eval "$(starship init zsh)"
+  fi
 fi
 
 export EDITOR=nvim
