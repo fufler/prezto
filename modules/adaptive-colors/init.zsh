@@ -27,7 +27,7 @@ local lum=$(( (0.2126 * R + 0.7152 * G + 0.0722 * B) / 65535 ))
 if (( lum < 0.5 )); then
   export MC_SKIN=dracula256
 
-  if command -v vivid >/dev/null 2>&1; then
+  if command -v vivid > /dev/null 2>&1; then
     export LS_COLORS="$( vivid generate dracula )"
   fi
 
