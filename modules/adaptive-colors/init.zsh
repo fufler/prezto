@@ -9,7 +9,7 @@ read -r response
 stty "$oldstty"
 
 local rgb=${response#*:}
-rgb=$( echo $rgb | tr -dc '[:print:]' )
+rgb=$( echo $rgb | tr -dc '[0-9a-z/]' )
 
 local r_hex
 local g_hex
